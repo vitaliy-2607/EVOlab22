@@ -1,0 +1,20 @@
+def direction(facing, turn):
+    dirs = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"]
+    if turn>0:
+        a=turn//45
+        a1=dirs.index(facing)
+        b=a1+a
+        if b>7:
+            b1=b//dirs.index("NW")
+            return(dirs[b1-1])
+        else:
+            return(dirs[b])
+    else:
+        c=turn//45
+        c1=dirs.index(facing)
+        c2=c1+c
+        if c<-7:
+            c3=c2//dirs.index("NW")
+            return(dirs[c3-1])
+        else:
+            return(dirs[c2])
